@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Contact Us - Wapa Plants</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<style>
+			:root {
+				--primary-color: #f2849e;
+				--secondary-color: #7ecaf6;
+				--dark-bg: #212529;
+			}
+
+			.contact-header {
+				text-align: center;
+				padding: 5em 0 2em;
+				background: linear-gradient(135deg, #fff5f7 0%, #eef9ff 100%);
+				border-radius: 0 0 50% 50% / 20px;
+			}
+
+			/* Grid System untuk Kontak */
+			.contact-wrapper {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 3em;
+				margin-top: -3em;
+			}
+
+			/* Glassmorphism Card untuk Form */
+			.contact-form-card {
+				background: rgba(255, 255, 255, 0.8);
+				backdrop-filter: blur(10px);
+				padding: 3em;
+				border-radius: 30px;
+				box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+				border: 1px solid rgba(255,255,255,0.5);
+			}
+
+			/* Info Cards di Sebelah Kanan */
+			.info-box {
+				background: white;
+				padding: 2em;
+				border-radius: 20px;
+				margin-bottom: 1.5em;
+				display: flex;
+				align-items: center;
+				gap: 20px;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				border-left: 5px solid var(--primary-color);
+			}
+
+			.info-box:hover {
+				transform: translateX(10px);
+				box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+			}
+
+			.info-icon {
+				font-size: 2.5em;
+			}
+
+			/* Floating Social Media */
+			.social-grid {
+				display: flex;
+				gap: 15px;
+				margin-top: 2em;
+			}
+
+			.social-btn {
+				flex: 1;
+				text-align: center;
+				padding: 1.5em;
+				border-radius: 15px;
+				color: white !important;
+				text-decoration: none;
+				font-weight: bold;
+				transition: 0.3s;
+			}
+
+			.ig { background: #E1306C; }
+			.wa { background: #25D366; }
+			.fb { background: #1877F2; }
+
+			.social-btn:hover {
+				filter: brightness(1.1);
+				transform: translateY(-5px);
+			}
+
+			/* Interactive Map Placeholder */
+			.map-container {
+				height: 300px;
+				background: #eee url('https://api.maptiler.com/maps/basic/static/auto/600x300.png?key=get_your_own_key') center;
+				background-size: cover;
+				border-radius: 20px;
+				margin-top: 2em;
+				position: relative;
+				overflow: hidden;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.map-label {
+				background: white;
+				padding: 10px 20px;
+				border-radius: 50px;
+				font-weight: bold;
+				box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+			}
+
+			@media screen and (max-width: 980px) {
+				.contact-wrapper { grid-template-columns: 1fr; }
+				.contact-header { padding: 3em 1em; }
+			}
+		</style>
+	</head>
+	<body class="is-preload category-body">
+		<div id="wrapper">
+
+				<header id="header">
+						<div class="inner">
+							<a href="index.html" class="logo">
+								<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">WAPA PLANTS</span>
+							</a>
+							<nav>
+								<ul>
+									<li><a href="#menu">Menu</a></li>
+								</ul>
+							</nav>
+						</div>
+					</header>
+
+				<nav id="menu">
+			<h2>Menu</h2>
+			<ul>
+			 <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="kategori.html">Plant Category</a></li>
+				<li><a href="kontak.html">Contact us</a></li>
+				<li><a href="https://bitri.link/wapadiumeubud">Hotels Information</a></li>
+			</ul>
+		</nav>
+
+			<div id="main">
+				<div class="contact-header reveal">
+					<h1>Get In Touch</h1>
+					<p>Ada pertanyaan tentang tanaman kami? Tim Gardening kami siap membantu Anda.</p>
+				</div>
+
+				<div class="inner">
+					<div class="contact-wrapper">
+						<div class="contact-form-card reveal">
+							<h3>Kirim Pesan</h3>
+							<form method="post" action="kirim_pesan.php">
+    <div class="row gtr-uniform">
+        <div class="col-12">
+            <input type="text" name="name" placeholder="Nama Lengkap" required />
+        </div>
+        <div class="col-12">
+            <input type="email" name="email" placeholder="Email" required />
+        </div>
+        <div class="col-12">
+            <select name="category" required>
+                <option value="">Pilih Subjek</option>
+                <option value="Tanya Tanaman">Tanya Tanaman</option>
+                <option value="Permintaan Bibit">Permintaan Bibit</option>
+                <option value="Garden Tour">Garden Tour</option>
+            </select>
+        </div>
+        <div class="col-12">
+            <textarea name="message" placeholder="Tulis pesan Anda di sini..." rows="6" required></textarea>
+        </div>
+        <div class="col-12">
+            <ul class="actions">
+                <li><input type="submit" value="Kirim Sekarang" class="primary" style="width: 100%;" /></li>
+            </ul>
+        </div>
+    </div>
+</form>
+						</div>
+
+						<div class="contact-info reveal">
+							<div class="info-box">
+								<div class="info-icon">📍</div>
+								<div>
+									<h4>Alamat Kami</h4>
+									<p>Jl. Suweta, Ubud, Gianyar, Bali 80571</p>
+								</div>
+							</div>
+							<div class="info-box" style="border-left-color: var(--secondary-color);">
+								<div class="info-icon">📞</div>
+								<div>
+									<h4>Telepon</h4>
+									<p>+62 361 973 178</p>
+								</div>
+							</div>
+
+							<div class="map-container">
+								<div class="map-label">📍 Wapa Di Ume Ubud</div>
+							</div>
+
+							<div class="social-grid">
+								<a href="#" class="social-btn ig">Instagram</a>
+								<a href="#" class="social-btn wa">WhatsApp</a>
+								<a href="#" class="social-btn fb">Facebook</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<footer id="footer">
+				<div class="inner">
+					<p style="text-align: center;">&copy; 2024 Wapa Di Ume Gardening Project. All rights reserved.</p>
+				</div>
+			</footer>
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script>
+			// Re-use Reveal Animation dari halaman sebelumnya
+			function reveal() {
+				var reveals = document.querySelectorAll(".reveal");
+				for (var i = 0; i < reveals.length; i++) {
+					var windowHeight = window.innerHeight;
+					var elementTop = reveals[i].getBoundingClientRect().top;
+					if (elementTop < windowHeight - 100) {
+						reveals[i].style.opacity = "1";
+						reveals[i].style.transform = "translateY(0)";
+					}
+				}
+			}
+			// Initial style for reveal
+			document.querySelectorAll(".reveal").forEach(el => {
+				el.style.opacity = "0";
+				el.style.transform = "translateY(30px)";
+				el.style.transition = "all 0.8s ease-out";
+			});
+			window.addEventListener("scroll", reveal);
+			reveal();
+		</script>
+        <script>
+    // Mengecek apakah URL mengandung ?status=success
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('status') === 'success') {
+        Swal.fire({
+            title: 'Terima Kasih!',
+            text: 'Pesan Anda telah berhasil dikirim ke tim Gardening Wapa Di Ume.',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 3000, // Pop-up hilang otomatis dalam 3 detik
+            timerProgressBar: true,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown' // Animasi masuk
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp' // Animasi keluar
+            },
+            background: '#ffffff',
+            color: '#585858',
+            iconColor: '#f2849e', // Warna pink agar senada dengan tema
+            customClass: {
+                popup: 'rounded-popup'
+            }
+        }).then(() => {
+            // Menghilangkan ?status=success dari URL agar pop-up tidak muncul lagi saat refresh
+            window.history.replaceState({}, document.title, window.location.pathname);
+        });
+    }
+</script>
+
+<style>
+    /* Tambahan agar sudut pop-up lebih membulat (Smooth) */
+    .rounded-popup {
+        border-radius: 20px !important;
+    }
+</style>
+	</body>
+</html>
